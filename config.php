@@ -6,4 +6,6 @@
 	$db_user = 'test_db_user';
 	$db_password = 'test_db_password';
 	
+	echo '123';
+	
 ?>
