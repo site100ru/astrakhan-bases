@@ -1,4 +1,4 @@
-name: Deploy астраханские-базы.рф
+name: Deploy Astrakhan bases
 
 on:
   push:
