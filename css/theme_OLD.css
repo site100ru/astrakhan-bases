@@ -1,0 +1,92 @@
+/*** FONTS ***/
+@font-face {
+	font-family: HelveticaNeueCyr-Light;
+	src: url(../fonts/Helvetica/HelveticaNeueCyr-Light.ttf);
+}
+
+@font-face {
+	font-family: HelveticaNeueCyr-Roman;
+	src: url(../fonts/Helvetica/HelveticaNeueCyr-Roman.ttf);
+}
+
+@font-face {
+	font-family: HelveticaNeueCyr-Medium;
+	src: url(../fonts/Helvetica/HelveticaNeueCyr-Medium.ttf);
+}
+
+h1 {
+	font-family: HelveticaNeueCyr-Medium;
+	font-size: 34px;
+}
+
+h2 {
+	font-family: HelveticaNeueCyr-Medium;
+	font-size: 28px;
+}
+
+p, li {
+	font-family: HelveticaNeueCyr-Light;
+	/* color: #323232; */
+	font-size: 18px;
+}
+/*** END FONTS ***/
+
+
+/*** ALL ***/
+
+/*** ALL ***/
+
+
+/*** BUTTONS ***/
+.btn.btn-corporate-color-1:first-child:hover,
+:not(btn-corporate-color-1.btn-check)+.btn-corporate-color-1.btn:hover {
+	color: 646464;
+	background-color: #e1e1e1;
+	border-color: #ebebeb;
+}
+
+.btn-corporate-color-1 {
+	height: 45px;
+	background-color: #f0f0f0;
+	border-color: #ebebeb;
+	font-family: HelveticaNeueCyr-Roman;
+	color: #646464;
+	font-size: 20px;
+	line-height: 1.6;
+}
+
+.btn-corporate-color-1:hover {
+	background-color: #e1e1e1;
+}
+
+#sortSelect {
+	height: 45px;
+	background-color: #f0f0f0;
+	border-color: #ebebeb;
+	font-family: HelveticaNeueCyr-Roman;
+	color: #646464;
+	font-size: 20px;
+	cursor: pointer;
+	transition: .2s;
+	line-height: 1.6;
+}
+
+#sortSelect:hover {
+	background-color: #e1e1e1;
+}
+
+.option {
+	cursor: pointer;
+	background: #ffffff;
+}
+/*** END BUTTONS ***/
+
+
+@media (max-width: 576px) {
+	h1 {
+		font-size: 30px;
+	}
+	h2 {
+		font-size: 24px;
+	}
+}

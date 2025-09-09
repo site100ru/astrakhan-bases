@@ -1,0 +1,15 @@
+User-agent: *
+
+Disallow: /?*
+Disallow: /index.php*
+Disallow: /index.dev*
+Disallow: /index.old*
+Disallow: /admin*
+Disallow: /map.php?*
+Disallow: /adm*
+Disallow: /*.pdf
+Disallow: *ysclid=*
+Disallow: *group*
+Disallow: *union*
+
+Sitemap: https://астраханские-базы.рф/sitemap.xml
