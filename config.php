@@ -2,8 +2,8 @@
 	
 	// Настройки БД
 	$db_host = 'localhost';
-	$db_name = 'u1538455_astrakhan-base';
-	$db_user = 'u1538455_default';
-	$db_password = '8eHZIi9Y633RE2pp';
+	$db_name = 'test_db_name';
+	$db_user = 'test_db_user';
+	$db_password = 'test_db_password';
 	
 ?>
