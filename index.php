@@ -6,7 +6,8 @@
 	$db_host = 'localhost';
 	$db_name = 'u1538455_astrakhan-base';
 	$db_user = 'u1538455_default';
-	$db_password = '8eHZIi9Y633RE2pp';
+	$db_password = '${{ secrets.ASTR_BAS_DB_PASS }}';
+	
 	
 	// Подключение к БД
 	$connection = mysqli_connect($db_host, $db_user, $db_password, $db_name);
