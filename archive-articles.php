@@ -159,7 +159,7 @@
 							$article_title = $record[ 'article_title' ];
 							$article_id = $record[ 'article_id' ]; ?>
 							<div class="col-md-4  article-card">
-								<a href="https://астраханские-базы.рф/single-article.php?article_title=<?php echo $article_title; ?>">
+								<a href="https://астраханские-базы.рф/single-article-new-2.php?article_title=<?php echo $article_title; ?>">
 									<!--div class="approximation project-container-2 rounded"-->
 									<img src="/img/article-thumbnail/<?php echo $article_id; ?>.jpg" class="img-fluid border-0 rounded" alt="">					
 									<!--/div-->

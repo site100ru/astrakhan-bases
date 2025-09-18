@@ -105,7 +105,7 @@
 							<a class="nav-link"  href="map.php">Базы на карте</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link"  href="single-article.php">О рыбалке в Астрахани</a>
+							<a class="nav-link"  href="single-article-new-2.php">О рыбалке в Астрахани</a>
 						</li>
 					</ul>
 					<ul class="navbar-nav mb-3 mb-md-0">

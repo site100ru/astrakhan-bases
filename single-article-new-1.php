@@ -150,14 +150,14 @@ $article_title = $_GET['article_title'];
     <section class="single-article bg-arhive py-5">
         <div class="container">
             <div class="row">
-                <div class="col">
+                <div class="col-12 mb-4 pb-3">
                     <?php
                     // Получаем и выводим контент статьи
                     $result = mysqli_query($connection, "SELECT * FROM `articles` WHERE `article_title` = '$article_title'");
                     $record = mysqli_fetch_assoc($result);
                     echo $record['article_content'];
                     ?>
-                    <button class="btn btn-danger single_btn" type="button"
+                    <button class="btn btn-danger single_btn mt-4 pt-3" type="button"
                         onclick="window.history.go(-1); return false;">
                         Назад
                     </button>
@@ -172,7 +172,7 @@ $article_title = $_GET['article_title'];
                         </div>
                     </div>
                     <div class="content">
-                        <div class="row">
+                        <div class="row mb-4 pb-3">
                             <?php
                             /* Выбираем только 6 статьи */
                             $result = mysqli_query($connection, "SELECT * FROM `articles` LIMIT 6");
@@ -181,10 +181,10 @@ $article_title = $_GET['article_title'];
                                 $article_id = $record['article_id']; ?>
                                 <div class="col-md-4 article-card">
                                     <a
-                                        href="https://астраханские-базы.рф/single-article.php?article_title=<?php echo $article_title; ?>">
+                                        href="https://астраханские-базы.рф/single-article-new-1.php?article_title=<?php echo $article_title; ?>">
                                         <!--div class="approximation project-container-2 rounded"-->
                                         <img src="/img/article-thumbnail/<?php echo $article_id; ?>.jpg"
-                                            class="img-fluid border-0 rounded" alt="">
+                                            class="img-fluid border-0 rounded w-100" alt="">
                                         <!--/div-->
                                     </a>
                                     <h3 class="pt-3"><?php echo $article_title; ?></h3>
