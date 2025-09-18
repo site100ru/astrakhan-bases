@@ -40,6 +40,8 @@
 		<!-- Style CSS -->
 		<link href="/css/theme.css" rel="stylesheet">
 
+        <link rel="icon" href="https://xn----7sbaabf0atet6a7amek4c2g.xn--p1ai/favicon.ico" type="image/x-icon">
+        
 		<!--link rel="shortcut icon" type="image/x-icon" href="favicon.ico"-->	
 		<link rel="shortcut icon" type="image/x-icon" href="/img/logo-ico.svg">	
 
