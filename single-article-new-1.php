@@ -147,7 +147,7 @@ $article_title = $_GET['article_title'];
 
     <!-- single-article -->
     <div id="single-article-sp" class="scroll-point"></div>
-    <section class="single-article py-5">
+    <section class="single-article pt-5">
         <div class="container">
             <div class="row">
                 <div class="col-12 mb-4 pb-3">
@@ -165,7 +165,7 @@ $article_title = $_GET['article_title'];
             </div>
         </div>
 
-        <div class="bg-arhive">
+        <div class="bg-arhive py-5">
             <div class="container ">
                 <div class="row">
                     <div class="col-12">
