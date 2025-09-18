@@ -147,7 +147,7 @@ $article_title = $_GET['article_title'];
 
     <!-- single-article -->
     <div id="single-article-sp" class="scroll-point"></div>
-    <section class="single-article bg-arhive py-5">
+    <section class="single-article py-5">
         <div class="container">
             <div class="row">
                 <div class="col-12 mb-4 pb-3">
@@ -162,43 +162,50 @@ $article_title = $_GET['article_title'];
                         Назад
                     </button>
                 </div>
-                <aside class="col">
-                    <div class="header">
-                        <h2 class="article-block-title mb-3">Другие статьи о Рыбалке в Астрахани </h2>
-                        <div class="article-block-decorate">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <div class="row mb-4 pb-3">
-                            <?php
-                            /* Выбираем только 6 статьи */
-                            $result = mysqli_query($connection, "SELECT * FROM `articles` LIMIT 6");
-                            while ($record = mysqli_fetch_assoc($result)) {
-                                $article_title = $record['article_title'];
-                                $article_id = $record['article_id']; ?>
-                                <div class="col-md-4 article-card">
-                                    <a
-                                        href="https://астраханские-базы.рф/single-article-new-1.php?article_title=<?php echo $article_title; ?>">
-                                        <!--div class="approximation project-container-2 rounded"-->
-                                        <img src="/img/article-thumbnail/<?php echo $article_id; ?>.jpg"
-                                            class="img-fluid border-0 rounded w-100" alt="">
-                                        <!--/div-->
-                                    </a>
-                                    <h3 class="pt-3"><?php echo $article_title; ?></h3>
-                                </div>
-                            <?php }
-                            ?>
-                        </div>
-                    </div>
+            </div>
+        </div>
 
-                    <a href="/archive-articles.php" class="btn btn-danger single_btn" type="button"
-                        onclick="window.history.go(-1); return false;">
-                        Все статьи
-                    </a>
-                </aside>
+        <div class="bg-arhive">
+            <div class="container ">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="header">
+                            <h2 class="article-block-title mb-3">Другие статьи о Рыбалке в Астрахани </h2>
+                            <div class="article-block-decorate">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="row mb-4 pb-3">
+                                <?php
+                                /* Выбираем только 6 статьи */
+                                $result = mysqli_query($connection, "SELECT * FROM `articles` LIMIT 6");
+                                while ($record = mysqli_fetch_assoc($result)) {
+                                    $article_title = $record['article_title'];
+                                    $article_id = $record['article_id']; ?>
+                                    <div class="col-md-4 article-card">
+                                        <a
+                                            href="https://астраханские-базы.рф/single-article.php?article_title=<?php echo $article_title; ?>">
+                                            <!--div class="approximation project-container-2 rounded"-->
+                                            <img src="/img/article-thumbnail/<?php echo $article_id; ?>.jpg"
+                                                class="img-fluid border-0 rounded w-100" alt="">
+                                            <!--/div-->
+                                        </a>
+                                        <h3 class="pt-3"><?php echo $article_title; ?></h3>
+                                    </div>
+                                <?php }
+                                ?>
+                            </div>
+                        </div>
+
+                        <a href="/archive-articles.php" class="btn btn-danger single_btn" type="button"
+                            onclick="window.history.go(-1); return false;">
+                            Все статьи
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
