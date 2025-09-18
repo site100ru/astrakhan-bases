@@ -218,7 +218,7 @@
 									'</button>'+
 								'</div>'+
 								'Цена: от <?php echo $record3[ 'base_price' ]; ?> руб/чел/сутки<br>'+
-								'Сайт: <a href="<?php echo $record3[ 'base_site' ]; ?>"><?php echo $record3[ 'base_site' ]; ?></a><br>'+
+								'Сайт: <a href="<?php echo $record3[ 'base_site' ]; ?>">https://<?php echo $record3[ 'base_site' ]; ?></a><br>'+
 								'Телефон: <?php echo $record3[ 'base_phone' ]; ?><br>'+
 								'Рейтинг в Яндексе: <?php echo $record3[ 'base_yandex_rating' ]; ?> '+
 								'<a href="<?php echo 'https://yandex.ru/profile/'.$record3[ 'base_yandex_id' ]; ?>" target="blank">Читать отзывы</a><br>'+

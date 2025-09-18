@@ -295,7 +295,7 @@
 					<div class="row">
 						<div class="col  footer-block-text">
 							<!--div id="company-in-footer">©2023 100 окон - производство и установка окон</div-->
-							<div class="footer-text">©2024г. | <a href="https://астраханские-базы.рф" class="footer-text-link link-offset-3 text-decoration-none">астраханские-базы.рф</a></div>
+                            <div class="footer-text">©<?php echo date('Y'); ?>г. | <a href="https://астраханские-базы.рф" class="footer-text-link link-offset-3 text-decoration-none">астраханские-базы.рф</a></div>
 						</div>
 					</div>
 				</div>
