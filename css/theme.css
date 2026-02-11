@@ -66,9 +66,9 @@ h3 {
     color: #323232;
 }
 
-h3 span {
-    color: var(--corporate-color-1);
-}
+/* h3 span { */
+    /* color: var(--corporate-color-1); */
+/* } */
 
 h4 {
     font-family: Gilroy-Bold;
