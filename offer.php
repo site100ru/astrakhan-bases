@@ -49,11 +49,11 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="Предложение рекламодателям по размещению информации на сайте астраханские-базы.рф" />
-		<meta name="keywords" content="Рыболовные, рыбалка, базы, отдыха, астрахань, астраханская, область, низовья, волги, дельта, каспийские, раскаты, цены, 2025, году" />
+		<meta name="keywords" content="Рыболовные, рыбалка, базы, отдыха, астрахань, астраханская, область, низовья, волги, дельта, каспийские, раскаты, цены, 2026, году" />
 		<meta property="og:locale" content="ru_RU" />
 		<meta property="og:type" content="website" />
-		<meta property="og:site_name" content="Рыболовные базы в Астраханской области цены в 2025 году" />
-		<meta property="og:title" content="Рыболовные базы в Астраханской области цены в 2025 году - <?php echo $title; ?>" />
+		<meta property="og:site_name" content="Рыболовные базы в Астраханской области цены в 2026 году" />
+		<meta property="og:title" content="Рыболовные базы в Астраханской области цены в 2026 году - <?php echo $title; ?>" />
 		<meta property="og:description" content="Предложение рекламодателям по размещению информации на сайте астраханские-базы.рф" />
 		<!--
 		<meta property="og:image" content="https://site100.ru/img/review.jpg" />
@@ -63,7 +63,7 @@
 		<meta name="yandex-verification" content="70fe58b7e11a9545" />
 		
 		
-		<title>Рыболовные базы в Астраханской области цены в 2025 году - Предложение рекламодателям</title>
+		<title>Рыболовные базы в Астраханской области цены в 2026 году - Предложение рекламодателям</title>
 		<!-- Bootstrap CSS -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<!-- Style CSS -->
@@ -123,7 +123,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col text-light">
-						<h1>Рыболовные базы в Астраханской области цены в 2025 году</h1>
+						<h1>Рыболовные базы в Астраханской области цены в 2026 году</h1>
 						<h2>Рыбалка, охота и отдых в дельте реки Волги</h2>
 						<h3 class="mb-0 fw-light fs-4">Предложение рекламодателям<h3>
 					</div>

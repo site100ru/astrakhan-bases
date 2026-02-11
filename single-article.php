@@ -20,10 +20,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="<?php echo $article_title; ?>" />
-		<meta name="keywords" content="Рыболовные, рыбалка, базы, отдыха, астрахань, астраханская, область, низовья, волги, дельта, каспийские, раскаты, цены, 2025, году" />
+		<meta name="keywords" content="Рыболовные, рыбалка, базы, отдыха, астрахань, астраханская, область, низовья, волги, дельта, каспийские, раскаты, цены, 2026, году" />
 		<meta property="og:locale" content="ru_RU" />
 		<meta property="og:type" content="website" />
-		<meta property="og:site_name" content="Рыболовные базы в Астраханской области цены в 2025 году" />
+		<meta property="og:site_name" content="Рыболовные базы в Астраханской области цены в 2026 году" />
 		<meta property="og:title" content="<?php echo $article_title; ?>" />
 		<meta property="og:description" content="<?php echo $article_title; ?>" />
 		<!--
