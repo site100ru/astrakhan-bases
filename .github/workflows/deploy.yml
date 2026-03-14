@@ -1,4 +1,4 @@
-name: Deploy Astrakhan bases
+name: Deploy astrakhan-bases
 
 on:
   push:
@@ -11,17 +11,19 @@ jobs:
       - name: Connect to server
         uses: appleboy/ssh-action@v0.1.10
         with:
-          host: ${{ secrets.REGRU_HOST }}
-          username: ${{ secrets.REGRU_USER }}
-          key: ${{ secrets.REGRU_KEY }}
+          host: ${{ secrets.ASTRAKHAN_BASES_HOST }}
+          username: ${{ secrets.ASTRAKHAN_BASES_USER }}
+          key: ${{ secrets.ASTRAKHAN_BASES_KEY }}
           script: |
-            #cd /var/www/u1538455/data/www/астраханские-базы.рф
-            #git clone git@github.com:site100ru/astrakhan-bases.git .
+            #Переключаемся в нужную папку
+            cd ~/astrahan-bases/public_html
             
-            cd /var/www/u1538455/data/www/астраханские-базы.рф
+            #Клинируем репозиторий в папку (только для первой выгрузки!!!)
+            #git clone https://github.com/site100ru/astrakhan-bases.git .
+            
+            #Клинируем репозиторий в папку
             git pull
             
-            #Если нужно жестко перезаписать версию на сервере
-            #cd /var/www/u1538455/data/www/астраханские-базы.рф
-            #git fetch --all
-            #git reset --hard origin/main
+            #Если кто то изменил файлы на сервере минуя GitHub, перезаписываем версию на сервере из GitHub
+            #git reset --hard HEAD
+            #git pull origin main
