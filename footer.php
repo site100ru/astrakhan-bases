@@ -10,7 +10,7 @@
 							<a href="https://астраханские-базы.рф/offer.php" class="footer-text-link nav-link d-inline" style="cursor: pointer; text-decoration: underline;">Реклама на сайте</a> | 
 							<span class="footer-text-link nav-link d-inline" style="cursor: pointer; text-decoration: underline;" data-bs-toggle="modal" data-bs-target="#messageModal">Написать нам</span>
 						</p>
-						<p class="mb-0 pb-3"><a href="https://астраханские-базы.рф" class="text-light">астраханские-базы.рф</a> <br>©<?php echo date( 'Y' ); ?>г.</p>
+						<p class="mb-0 pb-3 text-light"><a href="https://астраханские-базы.рф" class="text-light">астраханские-базы.рф</a> <br>©<?php echo date( 'Y' ); ?>г.</p>
 					</div>
 				</div>
 			</div>

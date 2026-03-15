@@ -357,10 +357,10 @@
 			<div class="container pt-5">
 				<div class="row justify-content-center">
 					<div class="col-md-4 col-lg-3 order-md-3">
-						<a href="map.php" type="button" class="btn btn-corporate-color-1 w-100 mb-3 mb-md-0">Показать на карте</a>
+						<a href="map.php" type="button" class="btn btn-corporate-color-1 w-100 mb-3 mb-md-0 btn-outline-success">Показать на карте</a>
 					</div>
 					<div class="col-md-4 col-lg-3 order-md-1">
-						<button class="btn btn-corporate-color-1 w-100 mb-3 mb-md-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+						<button class="btn btn-corporate-color-1 w-100 mb-3 mb-md-0 btn-outline-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 							Фильтр
 						</button>
 					</div>
