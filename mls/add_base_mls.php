@@ -19,7 +19,7 @@
 			
 			$email = $_POST[ 'email' ];
 			$site = $_POST[ 'site' ];
-			mail( "", "Заявка на добавления базы!", "
+			mail( "sidorov-vv3@mail.ru", "Заявка на добавления базы!", "
 				Email: " . $email ."\n
 				Site: " . $site
 			); 	

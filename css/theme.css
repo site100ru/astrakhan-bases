@@ -383,6 +383,9 @@ font-size: 30px;
     .home-header{
         background: url(../img/mobile-home-bg.png);
         padding: 60px 0;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
     .home-title{
         font-size: 28px;
