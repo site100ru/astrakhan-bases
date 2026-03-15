@@ -15,8 +15,7 @@
 		/* Принимаем данные обратно */
 		$Return = getCaptcha($_POST['g-recaptcha-response']);
 		// Если вероятность робота более 0.5, то считаем отправителя человеком и выполняем отправку почты
-		if( $Return->success == true && $Return->score > 1 ) {
-			
+        if( $Return->success == true && $Return->score >= 0.5 )			
 			$name = $_POST[ 'name' ];
 			$email = $_POST[ 'email' ];
 			$mes = $_POST[ 'mes' ];
