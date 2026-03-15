@@ -25,7 +25,7 @@
             $site  = $_POST['site'];
 
             mail(
-                "sidorov-vv3@mail.ru",
+                "sidorov-vv3@mail.ru, vasilyev-r@mail.ru",
                 "Заявка на добавления базы!",
                 "Email: " . $email . "\nSite: " . $site,
             );

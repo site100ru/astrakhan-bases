@@ -26,7 +26,7 @@ if ( $_POST ) {
         $mes   = $_POST['mes'];
 
         mail(
-            "sidorov-vv3@mail.ru",
+            "sidorov-vv3@mail.ru, vasilyev-r@mail.ru",
             "Сообщение с сайта астраханские-базы.рф!",
             "Имя: " . $name . "\nEmail: " . $email . "\nСообщение: " . $mes
         );
