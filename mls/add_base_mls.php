@@ -28,7 +28,7 @@
                 "sidorov-vv3@mail.ru",
                 "Заявка на добавления базы!",
                 "Email: " . $email . "\nSite: " . $site,
-                "From: info@астраханские-базы.рф\r\nReply-To: " . $email
+                "From: noreply@астраханские-базы.рф\r\nReply-To: " . $email
             );
 
             $_SESSION['win'] = 1;
