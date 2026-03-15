@@ -28,8 +28,7 @@ if ( $_POST ) {
         mail(
             "sidorov-vv3@mail.ru",
             "Сообщение с сайта астраханские-базы.рф!",
-            "Имя: " . $name . "\nEmail: " . $email . "\nСообщение: " . $mes,
-            "From: noreply@астраханские-базы.рф\r\nReply-To: " . $email
+            "Имя: " . $name . "\nEmail: " . $email . "\nСообщение: " . $mes
         );
 
         $_SESSION['win'] = 1;
