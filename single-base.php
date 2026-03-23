@@ -40,7 +40,17 @@
 	
 	// Определяем какой рекламный блок будем показывать, для теста проведения теста, какой рекламный блок выгоднее
 	//$rand = rand(0, 1);
-	
+
+	// Получаем первую картинку для og:image
+    $first_image = '';
+    $img_dir = $record['base_image'];
+    if (file_exists($img_dir)) {
+        $imgs = glob($img_dir . '/*.*');
+        sort($imgs);
+        if (!empty($imgs)) {
+            $first_image = 'https://xn----7sbaabf0atet6a7amek4c2g.xn--p1ai/' . $imgs[0];
+        }
+    }
 ?>
 
 <!doctype html>
@@ -59,6 +69,10 @@
 		<meta property="og:image" content="https://site100.ru/img/review.jpg" />
 		<meta property="og:url" content="https://site100.ru/index.php" />
 		-->
+        <?php if ($first_image): ?>
+            <meta property="og:image" content="<?php echo $first_image; ?>" />
+        <?php endif; ?>
+
 		<!-- Yandex.Webmaster -->
 		<meta name="yandex-verification" content="70fe58b7e11a9545" />
 		<title>Рыболовные базы в Астраханской области цены в 2026 году - <?php echo $title; ?></title>
