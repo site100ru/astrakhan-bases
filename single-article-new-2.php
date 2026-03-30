@@ -157,7 +157,7 @@ $article_title = $_GET['article_title'];
                     $record = mysqli_fetch_assoc($result);
                     echo $record['article_content'];
                     ?>
-                    <button class="btn btn-danger single_btn mt-4 pt-3" type="button"
+                    <button class="btn btn-danger single_btn" type="button"
                         onclick="window.history.go(-1); return false;">
                         Назад
                     </button>
