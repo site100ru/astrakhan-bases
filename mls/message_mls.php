@@ -1,9 +1,12 @@
 <?php
 session_start();
 
-if ( $_POST ) {
+// Если данные были отправлены через POST
+if ($_POST) {
 
-    function getCaptcha( $SecretKey ) {
+    // Функция проверки капчи через Google API
+    function getCaptcha($SecretKey)
+    {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
         curl_setopt($ch, CURLOPT_POST, true);
@@ -19,23 +22,39 @@ if ( $_POST ) {
 
     $Return = getCaptcha($_POST['g-recaptcha-response']);
 
-    if( $Return->success == true && $Return->score >= 0.5 ) {
+    // Проверяем: успешна ли капча и не робот ли это (score >= 0.5)
+    if ($Return->success == true && $Return->score >= 0.5) {
 
-        $name  = $_POST['name'];
-        $email = $_POST['email'];
-        $mes   = $_POST['mes'];
+        // Принимаем данные из формы
+        $name  = $_POST['name']  ?? 'Не указано';
+        $email = $_POST['email'] ?? 'Не указан';
+        $mes   = $_POST['mes']   ?? 'Нет сообщения';
 
-        mail(
-            "sidorov-vv3@mail.ru, vasilyev-r@mail.ru",
-            "Сообщение с сайта астраханские-базы.рф!",
-            "Имя: " . $name . "\nEmail: " . $email . "\nСообщение: " . $mes
-        );
+        // --- НАСТРОЙКИ ОТПРАВИТЕЛЯ ---
+        $to = "sidorov-vv3@mail.ru, vasilyev-r@mail.ru";
+        $subject = "Сообщение с сайта астраханские-базы.рф!";
+        $fromName = "Астраханские базы";
+
+        // Домен астраханские-базы.рф в формате Punycode
+        $fromEmail = "info@xn-----6kcbac9be0aj9bd0at7f.xn--p1ai";
+
+        $headers  = "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
+        $headers .= "From: =?UTF-8?B?" . base64_encode($fromName) . "?= <$fromEmail>\r\n";
+        $headers .= "Reply-To: $email\r\n"; // Чтобы при нажатии "Ответить" письмо шло клиенту
+        $headers .= "X-Mailer: PHP/" . phpversion();
+
+        // Текст сообщения
+        $message = "Имя: " . $name . "\n";
+        $message .= "Email: " . $email . "\n";
+        $message .= "Сообщение: " . $mes;
+
+        mail($to, $subject, $message, $headers);
 
         $_SESSION['win'] = 1;
         $_SESSION['recaptcha'] = '<p class="text-light">Спасибо, что Вы обратились именно к нам. Мы свяжемся с Вами в ближайшее время.</p>';
         header("Location: " . $_SERVER['HTTP_REFERER']);
         exit;
-
     } else {
 
         $_SESSION['win'] = 1;
@@ -44,4 +63,3 @@ if ( $_POST ) {
         exit;
     }
 }
-?>
