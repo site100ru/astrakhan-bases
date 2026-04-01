@@ -37,7 +37,7 @@ if ($_POST) {
         $fromName = "Астраханские базы";
 
         // Ваш домен астраханские-базы.рф в формате Punycode
-        $fromEmail = "info@xn-----6kcbac9be0aj9bd0at7f.xn--p1ai";
+        $fromEmail = "info@астраханские-базы.рф";
 
         $headers  = "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
