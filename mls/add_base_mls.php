@@ -31,10 +31,10 @@ if ($_POST) {
         $to      = "sidorov-vv3@mail.ru, vasilyev-r@mail.ru";
         $subject = "Заявка на добавления базы!";
 
-        $fromName  = "Астраханские базы";
-        $fromEmail = "info@xn-----6kcbac9be0aj9bd0at7f.xn--p1ai";
+        $fromName  = "Astrahanskie Bazy";
+        $fromEmail = "info@astrahanskie-bazy.ru";
 
-        $headers  = "From: =?UTF-8?B?" . base64_encode($fromName) . "?= <$fromEmail>\r\n";
+        $headers  = "From: $fromName <$fromEmail>\r\n";
         $headers .= "Reply-To: $fromEmail\r\n";
         $headers .= "Return-Path: $fromEmail\r\n";
         $headers .= "CC: $fromEmail\r\n";
@@ -51,7 +51,6 @@ if ($_POST) {
         $_SESSION['recaptcha'] = '<p class="text-light">Спасибо, что Вы обратились именно к нам. Мы свяжемся с Вами в ближайшее время.</p>';
         header("Location: " . $_SERVER['HTTP_REFERER']);
         exit;
-
     } else {
 
         $_SESSION['win'] = 1;
