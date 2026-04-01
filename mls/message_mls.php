@@ -4,6 +4,7 @@ session_start();
 // Если данные были отправлены через POST
 if ($_POST) {
 
+    // Функция проверки капчи через Google API
     function getCaptcha($SecretKey)
     {
         $ch = curl_init();
@@ -24,27 +25,28 @@ if ($_POST) {
     // Проверяем: успешна ли капча и не робот ли это (score >= 0.5)
     if ($Return->success == true && $Return->score >= 0.5) {
 
-        $name    = $_POST['name']    ?? 'Не указано';
-        $tel     = $_POST['tel']     ?? 'Не указан';
-        $mes     = $_POST['mes']     ?? 'Нет сообщения';
-        $product = $_POST['product'] ?? 'Не указан';
+        // Принимаем данные из формы
+        $name  = $_POST['name']  ?? 'Не указано';
+        $email = $_POST['email'] ?? 'Не указан';
+        $mes   = $_POST['mes']   ?? 'Нет сообщения';
 
-        $to      = "sidorov-vv3@mail.ru, vasilyev-r@mail.ru";
-        $subject = "Расчёт стоимости с сайта астраханские-базы.рф.";
+        // --- НАСТРОЙКИ ОТПРАВИТЕЛЯ ---
+        $to = "sidorov-vv3@mail.ru, vasilyev-r@mail.ru";
+        $subject = "Сообщение с сайта астраханские-базы.рф!";
+        $fromName = "Астраханские базы";
 
-        $fromName  = "Astrahanskie Bazy";
-        $fromEmail = "info@astrahanskie-bazy.ru";
+        // Домен астраханские-базы.рф в формате Punycode
+        $fromEmail = "info@xn-----6kcbac9be0aj9bd0at7f.xn--p1ai";
 
-        $headers  = "From: $fromName <$fromEmail>\r\n";
-        $headers .= "Reply-To: $fromEmail\r\n";
-        $headers .= "Return-Path: $fromEmail\r\n";
-        $headers .= "CC: $fromEmail\r\n";
-        $headers .= "BCC: $fromEmail\r\n";
-        $headers .= "Content-type: text/html; charset=utf-8\r\n";
+        $headers  = "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
+        $headers .= "From: =?UTF-8?B?" . base64_encode($fromName) . "?= <$fromEmail>\r\n";
+        $headers .= "Reply-To: $email\r\n";
+        $headers .= "X-Mailer: PHP/" . phpversion();
 
-        $message  = "Объект: " . $product . "\n";
-        $message .= "Потенциальный клиент: " . $name . "\n";
-        $message .= "Телефон: " . $tel . "\n";
+        // Текст сообщения
+        $message = "Имя: " . $name . "\n";
+        $message .= "Email: " . $email . "\n";
         $message .= "Сообщение: " . $mes;
 
         mail($to, $subject, $message, $headers);
