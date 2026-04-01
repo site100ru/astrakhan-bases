@@ -30,10 +30,9 @@ if ($_POST) {
 
     if ($Return->success == true && $Return->score >= 0.5) {
 
-        $name    = $_POST['name']    ?? 'Не указано';
-        $tel     = $_POST['tel']     ?? 'Не указан';
-        $mes     = $_POST['mes']     ?? 'Нет сообщения';
-        $product = $_POST['product'] ?? 'Не указан';
+        $name  = $_POST['name']  ?? 'Не указано';
+        $email = $_POST['email'] ?? 'Не указан';
+        $mes   = $_POST['mes']   ?? 'Нет сообщения';
 
         $mail = new PHPMailer(true);
 
@@ -52,9 +51,13 @@ if ($_POST) {
             $mail->addAddress('vasilyev-r@mail.ru');
             $mail->addReplyTo('info@астраханские-базы.рф');
 
-            $mail->Subject = 'Расчёт стоимости с сайта астраханские-базы.рф.';
+            $mail->Subject = 'Новое сообщение с сайта астраханские-базы.рф';
             $mail->isHTML(true);
-            $mail->Body = "Объект: $product<br>Потенциальный клиент: $name<br>Телефон: $tel<br>Сообщение: $mes";
+            $mail->Body = "
+                <b>Имя:</b> $name<br>
+                <b>Email:</b> $email<br>
+                <b>Сообщение:</b> $mes
+            ";
 
             $mail->send();
 
