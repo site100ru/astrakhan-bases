@@ -41,8 +41,8 @@ if ($_POST) {
             $mail->SMTPAuth   = true;
             $mail->Username   = 'info@астраханские-базы.рф';
             $mail->Password   = 'ctGpxc14E%nF';
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-            $mail->Port       = 587;
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+            $mail->Port       = 465;
             $mail->CharSet    = 'UTF-8';
 
             $mail->setFrom('info@астраханские-базы.рф', 'Astrahanskie Bazy');
