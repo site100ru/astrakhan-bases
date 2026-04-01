@@ -45,7 +45,7 @@ if ($_POST) {
             $mail->Port       = 465;
             $mail->CharSet    = 'UTF-8';
 
-            $mail->setFrom('info@астраханские-базы.рф', 'Astrahanskie Bazy');
+            $mail->setFrom('info@астраханские-базы.рф', 'Астраханские базы');
             $mail->addAddress('sidorov-vv3@mail.ru');
             $mail->addAddress('vasilyev-r@mail.ru');
             $mail->addReplyTo('info@астраханские-базы.рф');
