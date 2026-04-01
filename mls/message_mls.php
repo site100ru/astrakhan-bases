@@ -1,15 +1,15 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require __DIR__ . '/PHPMailer.php';
+require __DIR__ . '/SMTP.php';
+require __DIR__ . '/Exception.php';
+
 session_start();
 
 if ($_POST) {
-
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\SMTP;
-    use PHPMailer\PHPMailer\Exception;
-
-    require __DIR__ . '/PHPMailer.php';
-    require __DIR__ . '/SMTP.php';
-    require __DIR__ . '/Exception.php';
 
     function getCaptcha($SecretKey)
     {
@@ -59,7 +59,6 @@ if ($_POST) {
             $mail->send();
 
         } catch (Exception $e) {
-            // ошибка отправки — можно залогировать $mail->ErrorInfo
         }
 
         $_SESSION['win'] = 1;
