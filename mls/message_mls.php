@@ -1,8 +1,15 @@
 <?php
 session_start();
 
-// Если данные были отправлены через POST
 if ($_POST) {
+
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
+
+    require __DIR__ . '/PHPMailer.php';
+    require __DIR__ . '/SMTP.php';
+    require __DIR__ . '/Exception.php';
 
     function getCaptcha($SecretKey)
     {
@@ -21,7 +28,6 @@ if ($_POST) {
 
     $Return = getCaptcha($_POST['g-recaptcha-response']);
 
-    // Проверяем: успешна ли капча и не робот ли это (score >= 0.5)
     if ($Return->success == true && $Return->score >= 0.5) {
 
         $name    = $_POST['name']    ?? 'Не указано';
@@ -29,30 +35,38 @@ if ($_POST) {
         $mes     = $_POST['mes']     ?? 'Нет сообщения';
         $product = $_POST['product'] ?? 'Не указан';
 
-        $to      = "sidorov-vv3@mail.ru, vasilyev-r@mail.ru";
-        $subject = "Расчёт стоимости с сайта астраханские-базы.рф.";
+        $mail = new PHPMailer(true);
 
-        $fromName  = "Astrahanskie Bazy";
-        $fromEmail = "info@астраханские-базы.рф";
+        try {
+            $mail->isSMTP();
+            $mail->Host       = 'smtp.beget.com';
+            $mail->SMTPAuth   = true;
+            $mail->Username   = 'info@астраханские-базы.рф';
+            $mail->Password   = 'ctGpxc14E%nF';
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port       = 587;
+            $mail->CharSet    = 'UTF-8';
 
-        $headers  = "From: $fromName <$fromEmail>\r\n";
-        $headers .= "Reply-To: $fromEmail\r\n";
-        $headers .= "Return-Path: $fromEmail\r\n";
-        $headers .= "CC: $fromEmail\r\n";
-        $headers .= "BCC: $fromEmail\r\n";
-        $headers .= "Content-type: text/html; charset=utf-8\r\n";
+            $mail->setFrom('info@астраханские-базы.рф', 'Astrahanskie Bazy');
+            $mail->addAddress('sidorov-vv3@mail.ru');
+            $mail->addAddress('vasilyev-r@mail.ru');
+            $mail->addReplyTo('info@астраханские-базы.рф');
 
-        $message  = "Объект: " . $product . "\n";
-        $message .= "Потенциальный клиент: " . $name . "\n";
-        $message .= "Телефон: " . $tel . "\n";
-        $message .= "Сообщение: " . $mes;
+            $mail->Subject = 'Расчёт стоимости с сайта астраханские-базы.рф.';
+            $mail->isHTML(true);
+            $mail->Body = "Объект: $product<br>Потенциальный клиент: $name<br>Телефон: $tel<br>Сообщение: $mes";
 
-        mail($to, $subject, $message, $headers);
+            $mail->send();
+
+        } catch (Exception $e) {
+            // ошибка отправки — можно залогировать $mail->ErrorInfo
+        }
 
         $_SESSION['win'] = 1;
         $_SESSION['recaptcha'] = '<p class="text-light">Спасибо, что Вы обратились именно к нам. Мы свяжемся с Вами в ближайшее время.</p>';
         header("Location: " . $_SERVER['HTTP_REFERER']);
         exit;
+
     } else {
 
         $_SESSION['win'] = 1;
